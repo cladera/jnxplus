@@ -19,7 +19,9 @@ export default async function runExecutor(
     }
   }
 
-  return runCommand(`${getExecutable()} ${getProjectPath(context)}:${target}`);
+  return runCommand(
+    `${getExecutable()} --no-build-cache ${getProjectPath(context)}:${target}`
+  );
 }
 
 function getProjectType(context: ExecutorContext) {
